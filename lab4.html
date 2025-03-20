@@ -4,6 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Confirmation</title>
+    <script>
+        window.onload = function() {
+            alert("Welcome to our store!");
+            
+            let name = prompt("Please enter your name:");
+            let item = prompt("What would you like to order?");
+            let quantity;
+            
+            do {
+                quantity = parseInt(prompt("How many would you like? (1-99)"), 10);
+            } while (isNaN(quantity) || quantity < 1 || quantity > 99);
+            
+            let today = new Date();
+            let arrivalDate = new Date();
+            arrivalDate.setDate(today.getDate() + 7);
+            let arrivalDateString = arrivalDate.toDateString();
+            
+            let hours = today.getHours();
+            let greeting;
+            
+            if (hours < 12) {
+                greeting = "Good Morning";
+            } else if (hours < 18) {
+                greeting = "Good Afternoon";
+            } else {
+                greeting = "Good Evening";
+            }
+            
+            document.getElementById("greeting").innerText = `${greeting} ${name}, Thank you for ordering!`;
+            document.getElementById("orderDetails").innerText = `You ordered ${quantity} of ${item}.`;
+            document.getElementById("arrival").innerText = `Your order will arrive on: ${arrivalDateString}.`;
+        };
+    </script>
 </head>
 <body>
     <h1 id="greeting"></h1>
