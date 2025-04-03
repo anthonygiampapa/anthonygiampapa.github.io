@@ -2,35 +2,30 @@
 <head>
 <title>Cat Facts</title>
 <script>
-  let facts = [];
-  async function fetchCatFacts() {
-    try {
-      const response = await fetch('https://brianbruno.github.io/cats.json');
-      const data = await response.json();
-                
-      if (data.facts) {
-        facts = data.facts;
-        sortAndDisplayFacts();
-      }
-                
-      if (data.catPhoto) {
-        document.getElementById('cat-image').src = data.catPhoto;
-      }
-    } 
-    catch (error) {
-      console.error('Error fetching cat facts:', error);
-    }
-  }
-  function sortAndDisplayFacts() {
-    facts.sort((a, b) => a.factId - b.factId : b.factId - a.factId);
-    const tableBody = document.getElementById('facts-table-body');
-    tableBody.innerHTML = '';
-          
-    facts.forEach(fact => {
-      const row = `<tr><td>${fact.factId}</td><td>${fact.text}</td></tr>`;
-      tableBody.innerHTML += row;
-    });
-  }
+async function fetchCatFacts() {
+   try {
+     const response = await fetch('https://brianobruno.github.io/cats.json');
+     const data = await response.json();
+ 
+   if (data.facts) {
+     data.facts.sort((a, b) => a.text - b.factId);
+     const tableBody = document.getElementById('facts-table-body');
+     tableBody.innerHTML = '';
+ 
+     data.facts.forEach(fact => {
+       const row = `<tr><td>${fact.factId}</td><td>${fact.fact}</td></tr>`;
+       const row = `<tr><td>${fact.factId}</td><td>${fact.text}</td></tr>`;
+       tableBody.innerHTML += row;
+       });
+     }
+ 
+     if (data.image) {
+       document.getElementById('cat-image').src = data.image;
+     }
+   } catch (error) {
+     console.error('Error fetching cat facts:', error);
+     }
+ }
 </script>
 </head>
 
