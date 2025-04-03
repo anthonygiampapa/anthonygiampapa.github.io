@@ -22,7 +22,7 @@
     }
   }
   function sortAndDisplayFacts() {
-    facts.sort((a, b) => ascending ? a.factId - b.factId : b.factId - a.factId);
+    facts.sort((a, b) => a.factId - b.factId : b.factId - a.factId);
     const tableBody = document.getElementById('facts-table-body');
     tableBody.innerHTML = '';
           
