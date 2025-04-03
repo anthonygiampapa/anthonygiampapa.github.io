@@ -13,7 +13,7 @@ async function fetchCatFacts() {
     tableBody.innerHTML = '';
                 
     data.facts.forEach(fact => {
-      const row = `<tr><td>${fact.factId}</td><td>${fact.fact}</td></tr>`;
+      const row = `<tr><td>${fact.factId}</td><td>${fact.text}</td></tr>`;
       tableBody.innerHTML += row;
       });
     }
