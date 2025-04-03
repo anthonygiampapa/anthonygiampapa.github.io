@@ -29,6 +29,19 @@ async function fetchCatFacts() {
 </head>
 
 <body>
-
+<h1>Cat Facts</h1>
+  <button onclick="fetchCatFacts()">Load Cat Facts</button>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Fact ID</th>
+        <th>Fact</th>
+      </tr>
+    </thead>
+    <tbody id="facts-table-body">
+    </tbody>
+  </table>
+  <h2>Cat Image</h2>
+  <img id="cat-image" src="placeholder.jpg" alt="Cat Image" width="300">
 </body>
 </html>
