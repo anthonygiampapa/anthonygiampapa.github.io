@@ -8,7 +8,7 @@ async function fetchCatFacts() {
     const data = await response.json();
            
   if (data.facts) {
-    data.facts.sort((a, b) => a.text - b.factId);
+    facts.sort((a, b) => ascending ? a.factId - b.factId : b.factId - a.factId);
     const tableBody = document.getElementById('facts-table-body');
     tableBody.innerHTML = '';
                 
