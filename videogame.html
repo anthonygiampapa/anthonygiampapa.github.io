@@ -56,7 +56,6 @@ async function loadQuestion(){
     showQuestion(data.results[0]);
 }
 
-// event listeners
 function eventListeners(){
     _checkBtn.addEventListener('click', checkAnswer);
     _playAgainBtn.addEventListener('click', restartQuiz);
@@ -69,8 +68,6 @@ document.addEventListener('DOMContentLoaded', function(){
     _correctScore.textContent = correctScore;
 });
 
-
-// display question and options
 function showQuestion(data){
     _checkBtn.disabled = false;
     correctAnswer = data.correct_answer;
@@ -92,8 +89,6 @@ function showQuestion(data){
     selectOption();
 }
 
-
-// options selection
 function selectOption(){
     const optionButtons = _options.querySelectorAll('.option-btn');
     optionButtons.forEach(function(button){
@@ -104,8 +99,6 @@ function selectOption(){
     });
 }
 
-
-// answer checking
 function checkAnswer(){
     _checkBtn.disabled = true;
     const selectedButton = _options.querySelector('.selected');
