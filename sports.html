@@ -47,7 +47,7 @@ const _totalQuestion = document.getElementById('total-question');
 let correctAnswer = "", correctScore = askedCount = 0, totalQuestion = 10;
 
 async function loadQuestion(){
-    const APIUrl = 'https://opentdb.com/api.php?amount=1';
+    const APIUrl = 'https://opentdb.com/api.php?amount=10&category=21';
     const result = await fetch(`${APIUrl}`)
     const data = await result.json();
     _result.innerHTML = "";
