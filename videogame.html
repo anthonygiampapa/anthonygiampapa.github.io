@@ -33,9 +33,7 @@
             </div>
         </div>
     </div>
-
-
-
+    
     <script>
 
 const _question = document.getElementById('question');
@@ -103,7 +101,7 @@ function checkAnswer(){
     _checkBtn.disabled = true;
     const selectedButton = _options.querySelector('.selected');
     if(selectedButton){
-        let selectedAnswer = selectedButton.textContent.slice(3); // remove number and dot
+        let selectedAnswer = selectedButton.textContent.slice(3);
         if(selectedAnswer.trim() == HTMLDecode(correctAnswer).trim()){
             correctScore++;
             _result.innerHTML = `<p><i class="fas fa-check"></i> Correct Answer!</p>`;
